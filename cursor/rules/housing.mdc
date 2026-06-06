@@ -1,0 +1,198 @@
+---
+alwaysApply: true
+---
+
+Bạn là Senior Data Engineer, Data Scientist và Laravel Architect.
+Sử dụng file vietnam_housing_dataset.csv
+
+Hãy xây dựng một hệ thống hoàn chỉnh cho đồ án môn Data Mining với dataset bất động sản Việt Nam có các cột:
+
+Address, Area, Frontage, Access Road, House direction, Balcony direction, Floors, Bedrooms, Bathrooms, Legal status, Furniture state, Price.
+
+Mục tiêu:
+
+1. Phân tích dữ liệu (EDA)
+2. Tiền xử lý dữ liệu
+3. Thiết kế Data Warehouse
+4. Triển khai Iceberg Cube
+5. Áp dụng Classification để dự đoán phân khúc giá bất động sản
+6. Xây dựng Web Application bằng Laravel 11
+
+Yêu cầu chi tiết:
+
+# 1. Data Analysis (EDA)
+
+Tạo notebook Python sử dụng:
+
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+
+Thực hiện:
+
+* Kiểm tra dữ liệu thiếu
+* Kiểm tra kiểu dữ liệu
+* Thống kê mô tả
+* Histogram Price
+* Scatter Plot Area vs Price
+* Boxplot Floors vs Price
+* Boxplot Legal Status vs Price
+* Correlation Heatmap
+* Phân tích các yếu tố ảnh hưởng đến giá nhà
+
+Xuất biểu đồ và kết luận cho từng biểu đồ.
+
+# 2. Data Preprocessing
+
+Thực hiện:
+
+* Xử lý missing values
+* Loại bỏ outliers bằng IQR
+* One Hot Encoding cho:
+
+  * House direction
+  * Balcony direction
+  * Legal status
+  * Furniture state
+* StandardScaler cho:
+
+  * Area
+  * Frontage
+  * Access Road
+  * Floors
+  * Bedrooms
+  * Bathrooms
+
+Tạo pipeline xử lý dữ liệu rõ ràng.
+
+# 3. Data Warehouse Design
+
+Thiết kế Star Schema.
+
+Fact Table:
+
+fact_property
+
+Dimensions:
+
+dim_location
+dim_property
+dim_legal
+dim_furniture
+dim_direction
+dim_date
+
+Sinh:
+
+* ERD
+* SQL tạo bảng
+* Foreign Keys
+* Sample ETL Flow
+
+# 4. Iceberg Cube
+
+Thiết kế các cube:
+
+* City
+* Legal Status
+* Furniture State
+
+Sinh SQL:
+
+GROUP BY CUBE
+
+Kèm điều kiện:
+
+HAVING COUNT(*) > 20
+
+Giải thích rõ Iceberg Cube hoạt động như thế nào.
+
+# 5. Classification
+
+Mục tiêu:
+
+Phân loại bất động sản thành:
+
+* Low Price
+* Medium Price
+* High Price
+
+Dựa trên Price.
+
+Áp dụng:
+
+* Decision Tree
+* Random Forest
+
+Thực hiện:
+
+* Train/Test Split
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
+
+So sánh kết quả hai mô hình.
+
+# 6. Laravel 12 Web Application
+
+Kiến trúc:
+
+Laravel 12
+MySQL
+Bootstrap hoặc Tailwind
+Chart.js
+
+Các màn hình:
+
+Dashboard
+Property Analytics
+Data Warehouse Reports
+Iceberg Cube Reports
+Prediction Form
+
+Dashboard gồm:
+
+* Tổng số bất động sản
+* Giá trung bình
+* Giá cao nhất
+* Giá thấp nhất
+
+Analytics:
+
+* Giá theo diện tích
+* Giá theo số phòng ngủ
+* Giá theo pháp lý
+* Giá theo nội thất
+
+Prediction:
+
+Cho phép nhập:
+
+* Area
+* Frontage
+* Floors
+* Bedrooms
+* Bathrooms
+* Legal Status
+
+Sau đó hiển thị:
+
+* Low Price
+* Medium Price
+* High Price
+
+Yêu cầu code chuẩn Laravel 12
+
+* Controller
+* Service
+* Repository Pattern
+* Migration
+* Seeder
+* API Endpoint
+* Validation
+* Responsive UI cho Desktop, Tablet và Mobile
+
+Không được tạo code giả lập. Mọi chức năng phải hoạt động thực tế.
