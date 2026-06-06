@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/edward/Library/Application Support/Herd/bin/php84",
+            "args": [
+                "/Users/edward/Documents/GitHub/housing-vn/housing-app/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
